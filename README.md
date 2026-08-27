@@ -1,10 +1,10 @@
-🚗 DVLD - Driving & Vehicle License Department
+- ##🚗 DVLD - Driving & Vehicle License Department
 
 A desktop application for managing a Driving & Vehicle License Department.
 
 This project was built as a training project to practice building a real-world application using C#, WinForms, and SQL Server.
 
-✨ Features
+- ##✨ Features
 
 - 👤 Manage People & Drivers
 - 👨‍💼 Manage Users & Authentication
@@ -17,7 +17,13 @@ This project was built as a training project to practice building a real-world a
 - 🔍 Search and view detailed records
 - 🔐 User permissions and active/inactive status
 
-🛠️ Technologies
+- ## 🎥 Project Demo
+
+Check out the project demo on LinkedIn:
+
+👉 [Watch the Demo on LinkedIn](https://lnkd.in/p/dvkiZrvu)
+
+- ## 🛠️ Technologies
 
 - 💻 C# / .NET
 - 🪟 Windows Forms
@@ -27,7 +33,7 @@ This project was built as a training project to practice building a real-world a
   - Business Logic Layer
   - Data Access Layer
 
-📂 Project Structure
+- ## 📂 Project Structure
 
 DVLD
 ├── Application
@@ -41,7 +47,7 @@ DVLD
 ├── Renew & Replacement
 └── Database
 
-🎯 Project Goal
+- ## 🎯 Project Goal
 
 The main goal of this project was to gain practical experience with:
 
@@ -55,20 +61,20 @@ The main goal of this project was to gain practical experience with:
 - Reusable UserControls
 - Working with a larger multi-form application
 
-🚀 Getting Started
+- ## 🚀 Getting Started
 
 1. Clone the repository.
 2. Create the DVLD database using the provided SQL scripts.
 3. Update the SQL Server connection string in the Data Access Layer.
 4. Build and run the application.
 
-📌 Project Status
+- ## 📌 Project Status
 
 ✅ Completed
 
 This is a training project and may contain areas that could be improved or refactored as I continue learning.
 
-👨‍💻 Author
+- ## 👨‍💻 Author
 
 Jafr
 
