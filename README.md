@@ -1,10 +1,10 @@
-- ##🚗 DVLD - Driving & Vehicle License Department
+- ## 🚗 DVLD - Driving & Vehicle License Department
 
 A desktop application for managing a Driving & Vehicle License Department.
 
 This project was built as a training project to practice building a real-world application using C#, WinForms, and SQL Server.
 
-- ##✨ Features
+- ## ✨ Features
 
 - 👤 Manage People & Drivers
 - 👨‍💼 Manage Users & Authentication
