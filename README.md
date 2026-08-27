@@ -1,7 +1,7 @@
 - ## 🚗 DVLD - Driving & Vehicle License Department
 
 - <p align="center">
-  <img src="Images/Project Image.PNG" alt="DVLD Project" width="900"/>
+  <img src="Images/Resources/Project Image.PNG" alt="DVLD Project" width="900"/>
 </p>
 
 A desktop application for managing a Driving & Vehicle License Department.
