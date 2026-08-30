@@ -1,4 +1,4 @@
-﻿using DVLD_BLL;
+using DVLD_BLL;
 using DVLD_Utilities;
 using System;
 using System.Drawing;
@@ -85,11 +85,16 @@ namespace DVLD
         {
             if (cBRememberMe.Checked)
             {
-                clsRememberMe.SaveUserNameAndPassword(txtUserName.Text + "|" + txtPassword.Text);
+                 if(!clsRememberMe.SaveUserNameAndPassword(txtUserName.Text + "|" + txtPassword.Text))
+                    MessageBox.Show("Falid to Save User Login Info", "Login Info Was Not Saved", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
             else
             {
-                clsRememberMe.DeleteUserLoginRecord();
+                if(!clsRememberMe.DeleteUserLoginRecord())
+                    MessageBox.Show("Falid to Delete User Login Info", "Login Info Was Not Deleted", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+
             }
         }
 
