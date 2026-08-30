@@ -1,5 +1,5 @@
-﻿using System;
-using System.IO;
+using System;
+using System.Diagnostics;
 using Microsoft.Win32;
 
 namespace DVLD_Utilities
@@ -28,6 +28,7 @@ namespace DVLD_Utilities
 
             catch(Exception  ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 return false;
             }
         }
@@ -49,6 +50,7 @@ namespace DVLD_Utilities
             }
             catch (Exception ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 return false;
             }
 
@@ -88,6 +90,7 @@ namespace DVLD_Utilities
             }
             catch (Exception ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 return false;
             }
         }
@@ -102,6 +105,21 @@ namespace DVLD_Utilities
                 return true;
             else
                 return false;
+        }
+    }
+
+    public class clsEventLog
+    {
+       static string sourceName = "DVLD";
+
+        public static void LoadToEventLog(string EventDetails, EventLogEntryType EntryType)
+        {
+            if (!EventLog.SourceExists(sourceName))
+            {
+                EventLog.CreateEventSource(sourceName, "Application");
+            }
+
+            EventLog.WriteEntry(sourceName, EventDetails, EntryType);
         }
     }
 }
