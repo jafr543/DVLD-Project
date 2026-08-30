@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using DVLD_Utilities;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Net;
-using System.Security.AccessControl;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Policy;
-using static System.Net.Mime.MediaTypeNames;
+using System.Diagnostics;
 
 
 namespace DVLD_DAL
@@ -48,6 +42,7 @@ namespace DVLD_DAL
 
             catch (Exception ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 //Console.WriteLine("Error" + ex.Message);
             }
 
@@ -85,7 +80,9 @@ namespace DVLD_DAL
             }
 
             catch (Exception ex)
+
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 //Console.WriteLine("Error" + ex.Message);
             }
 
@@ -141,6 +138,7 @@ namespace DVLD_DAL
 
             catch (Exception ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 //Console.WriteLine(ex.Message);
             }
 
@@ -199,8 +197,9 @@ namespace DVLD_DAL
                 rowseffected = command.ExecuteNonQuery();
             }
 
-            catch
+            catch(Exception ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 rowseffected = 0;
             }
 
@@ -265,8 +264,9 @@ namespace DVLD_DAL
                 reader.Close();
             }
 
-            catch
+            catch(Exception ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 isFound = false;
             }
 
@@ -330,8 +330,9 @@ namespace DVLD_DAL
                 reader.Close();
             }
 
-            catch
+            catch(Exception ex) 
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 isFound = false;
             }
 
@@ -371,6 +372,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -412,6 +414,7 @@ namespace DVLD_DAL
 
             catch(SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -453,6 +456,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -492,8 +496,9 @@ namespace DVLD_DAL
                 reader.Close();
             }
 
-            catch
+            catch(Exception ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 isFound = false;
             }
 
@@ -531,8 +536,9 @@ namespace DVLD_DAL
                 reader.Close();
             }
 
-            catch
+            catch(Exception ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 isFound = false;
             }
 
@@ -573,6 +579,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 isFound = false;
             }
 
@@ -619,8 +626,9 @@ namespace DVLD_DAL
                 rowseffected = Deletecommand.ExecuteNonQuery();
             }
 
-            catch (SqlException exception)
+            catch (SqlException ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 rowseffected = 0;
             }
 
@@ -664,6 +672,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -706,6 +715,7 @@ namespace DVLD_DAL
 
             catch(SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -747,6 +757,7 @@ namespace DVLD_DAL
 
             catch(SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -780,6 +791,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 //throw new Exception(ex.Message);
                 rowseffected = 0;
             }
@@ -826,6 +838,7 @@ namespace DVLD_DAL
 
             catch(SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -872,6 +885,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -913,6 +927,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -954,6 +969,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -993,6 +1009,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1033,6 +1050,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1077,6 +1095,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1116,6 +1135,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1158,6 +1178,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1191,6 +1212,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1241,6 +1263,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1281,6 +1304,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1324,6 +1348,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1359,6 +1384,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1413,6 +1439,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1464,6 +1491,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1510,6 +1538,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1551,6 +1580,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1595,6 +1625,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1635,6 +1666,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1688,6 +1720,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1732,6 +1765,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1774,6 +1808,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1814,6 +1849,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1849,6 +1885,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1894,6 +1931,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -1946,8 +1984,9 @@ namespace DVLD_DAL
                 rowseffected = command.ExecuteNonQuery();
             }
 
-            catch
+            catch(Exception ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 rowseffected = 0;
             }
 
@@ -1993,6 +2032,7 @@ namespace DVLD_DAL
 
             catch(SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2033,6 +2073,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2081,6 +2122,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2119,6 +2161,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2159,6 +2202,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2198,6 +2242,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2237,6 +2282,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2288,6 +2334,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2345,6 +2392,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2389,6 +2437,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2434,6 +2483,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2468,6 +2518,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2520,6 +2571,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2577,6 +2629,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2620,6 +2673,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2664,6 +2718,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2717,6 +2772,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2757,6 +2813,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2795,6 +2852,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2843,6 +2901,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2886,6 +2945,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2927,6 +2987,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2962,6 +3023,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -2998,6 +3060,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3050,6 +3113,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3087,6 +3151,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3141,6 +3206,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3183,6 +3249,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3227,6 +3294,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3265,6 +3333,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3305,6 +3374,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3346,6 +3416,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3397,6 +3468,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3437,6 +3509,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3475,6 +3548,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3513,6 +3587,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3560,6 +3635,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3610,6 +3686,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3651,6 +3728,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3707,6 +3785,7 @@ namespace DVLD_DAL
 
             catch(SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3750,6 +3829,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3816,6 +3896,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3878,6 +3959,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3919,6 +4001,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -3978,6 +4061,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
@@ -4035,6 +4119,7 @@ namespace DVLD_DAL
 
             catch (SqlException ex)
             {
+                clsEventLog.LoadToEventLog(ex.Message, EventLogEntryType.Error);
                 throw new Exception(ex.Message);
             }
 
