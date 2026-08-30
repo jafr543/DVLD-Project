@@ -1,6 +1,7 @@
 using DVLD_BLL;
 using DVLD_Utilities;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -57,6 +58,7 @@ namespace DVLD
                 if(CurrentUser.IsActive)
                 {
                    RememberUser();
+                    clsEventLog.LoadToEventLog($"User [{CurrentUser.UserName}] Has Login To The System", EventLogEntryType.Information);
                     this.Hide();
                    frmMainForm frmMainForm = new frmMainForm();
                    frmMainForm.ShowDialog();
