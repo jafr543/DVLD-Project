@@ -51,7 +51,7 @@ namespace DVLD
                 return;
             }
 
-            CurrentUser = clsUser.Find(txtUserName.Text, txtPassword.Text);
+            CurrentUser = clsUser.Find(txtUserName.Text, clsHashPassword.ComputeHash(txtPassword.Text));
 
             if(CurrentUser != null)
             {
