@@ -1,12 +1,6 @@
-﻿using DVLD_BLL;
+using DVLD_BLL;
+using DVLD_Utilities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DVLD
@@ -149,7 +143,7 @@ namespace DVLD
 
             NewUser.PersonInfo = _SelectedPerson;
             NewUser.UserName = txtUserName.Text.Trim();
-            NewUser.Password = txtPassword.Text.Trim();
+            NewUser.Password = clsHashPassword.ComputeHash(txtPassword.Text.Trim());
             NewUser.IsActive = cBIsActive.Checked;
 
             if(NewUser.Save())
